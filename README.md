@@ -2,6 +2,8 @@
 
 Python library written as a case study in making a generalized pythonic implementation of a Genetic Algorithms, which is a heuristic optimization algorithm.
 
+The algorithm is based on user-defined _"strategies"_ for individual generation, mutation and reproduction, with some basic defaults already implemented. 
+
 ## Optimization
 
 The genetic algorithm is accessible through the [`mendel.optimizer.optimize`](https://github.com/vsartor/mendel/blob/master/mendel/optimizer.py). This function takes in a fitness function, three strategies and optionally some Genetic Algorithm hyper-parameters.
