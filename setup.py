@@ -12,10 +12,9 @@ setuptools.setup(
     author="Victhor Sartório",
     author_email="victhor@vsartor.com",
     url="https://github.com/vsartor/mendel",
-    keywords=["optimizer", "cython", "genetic algorithm"],
+    keywords=["optimizer", "genetic algorithm"],
     install_requires=[
         "numpy",
-        "returns",
     ],
     classifiers=[
         "Intended Audience :: Science/Research",
