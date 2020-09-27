@@ -4,7 +4,7 @@ import setuptools
 
 
 setuptools.setup(
-    name="mendelopt-opt",
+    name="mendel-opt",
     packages=["mendelopt"],
     version="0.1",
     license="MIT",
