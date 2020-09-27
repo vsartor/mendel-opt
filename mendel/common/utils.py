@@ -3,9 +3,12 @@ Miscelaneous common utility functions.
 """
 
 
-def censor_string(string: str) -> str:
-    _SLICE_SIZE = 6
-    _FILL_STR = " ... "
-    _MAX_LENGTH = 2 * _SLICE_SIZE + len(_FILL_STR)
+def censor_string(string: str, slice_size: int = 6, fill_str: str = " ... ") -> str:
+    """
+    Censors the middle of a string if to save space. Effectively shows the
+    first and last `slice_size` characters and `fill_str` in the middle. Only
+    censors if it would save space.
+    """
 
-    return string if len(string) <= _MAX_LENGTH else f"{string[:_SLICE_SIZE]}{_FILL_STR}{string[-_SLICE_SIZE:]}"
+    max_lentgh = 2 * slice_size + len(fill_str)
+    return string if len(string) <= max_lentgh else f"{string[:slice_size]}{fill_str}{string[-slice_size:]}"
