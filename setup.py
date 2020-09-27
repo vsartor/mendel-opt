@@ -6,9 +6,9 @@ import setuptools
 setuptools.setup(
     name="mendel",
     packages=["mendel"],
-    version="0.1-dev",
+    version="0.1",
     license="MIT",
-    description="Python library written as a case study in implementing Genetic Algorithms in both Python and Cython.",
+    description="Python library written as a case study in implementing pythonic Genetic Algorithms.",
     author="Victhor Sartório",
     author_email="victhor@vsartor.com",
     url="https://github.com/vsartor/mendel",
