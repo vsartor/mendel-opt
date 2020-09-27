@@ -8,7 +8,7 @@ from typing import Tuple
 
 import numpy as np  # type: ignore
 
-from mendel.common.types import FitnessFunc, Individual
+from mendelopt.common.types import FitnessFunc, Individual
 
 
 class ReproductionStrategy(ABC):

@@ -1,4 +1,4 @@
-# Mendel
+# mendel-opt
 
 Python library written as a case study in making a generalized pythonic implementation of a Genetic Algorithms, which is a heuristic optimization algorithm.
 

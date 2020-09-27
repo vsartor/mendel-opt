@@ -6,8 +6,8 @@ import random
 from abc import ABC, abstractmethod
 from typing import List, Set
 
-from mendel.common.types import FitnessFunc, Individual
-from mendel.common.utils import censor_string
+from mendelopt.common.types import FitnessFunc, Individual
+from mendelopt.common.utils import censor_string
 
 
 class MutationStrategy(ABC):

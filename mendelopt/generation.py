@@ -9,8 +9,8 @@ from typing import List, Set, Tuple
 
 import numpy as np  # type: ignore
 
-from mendel.common.types import FitnessFunc, Individual
-from mendel.common.utils import censor_string
+from mendelopt.common.types import FitnessFunc, Individual
+from mendelopt.common.utils import censor_string
 
 
 class GenerationStrategy(ABC):

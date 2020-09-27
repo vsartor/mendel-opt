@@ -7,10 +7,10 @@ from typing import List, Optional
 
 import numpy as np  # type: ignore
 
-from mendel.common.types import FitnessFunc, GeneticParams, GeneticResult, Individual
-from mendel.generation import GenerationStrategy
-from mendel.mutation import MutationStrategy
-from mendel.reproduction import ReproductionStrategy
+from mendelopt.common.types import FitnessFunc, GeneticParams, GeneticResult, Individual
+from mendelopt.generation import GenerationStrategy
+from mendelopt.mutation import MutationStrategy
+from mendelopt.reproduction import ReproductionStrategy
 
 
 def optimize(
