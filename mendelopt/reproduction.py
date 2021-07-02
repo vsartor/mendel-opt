@@ -39,7 +39,7 @@ class NaiveReproductionStrategy(ReproductionStrategy):
             return Individual(parents[1].copy(), fitness_function)
 
     def __repr__(self) -> str:
-        return "BasicReproductionStrategy()"
+        return "NaiveReproductionStrategy()"
 
 
 class BasicReproductionStrategy(ReproductionStrategy):
