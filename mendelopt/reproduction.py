@@ -23,6 +23,25 @@ class ReproductionStrategy(ABC):
         """
 
 
+class NaiveReproductionStrategy(ReproductionStrategy):
+    """
+    Reproduces either of the parents.
+    """
+
+    def reproduce(self, parents: Tuple[Individual, Individual], fitness_function: FitnessFunc) -> Individual:
+        """
+        Creates a new individual cloning either of the parents.
+        """
+
+        if numpy.random.random() < 0.5:
+            return Individual(parents[0].copy(), fitness_function)
+        else:
+            return Individual(parents[1].copy(), fitness_function)
+
+    def __repr__(self) -> str:
+        return "NaiveReproductionStrategy()"
+
+
 class BasicReproductionStrategy(ReproductionStrategy):
     """
     Basic reproduction strategy based on slicing.
