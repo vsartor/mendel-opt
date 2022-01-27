@@ -11,4 +11,8 @@ def censor_string(string: str, slice_size: int = 6, fill_str: str = " ... ") -> 
     """
 
     max_lentgh = 2 * slice_size + len(fill_str)
-    return string if len(string) <= max_lentgh else f"{string[:slice_size]}{fill_str}{string[-slice_size:]}"
+    return (
+        string
+        if len(string) <= max_lentgh
+        else f"{string[:slice_size]}{fill_str}{string[-slice_size:]}"
+    )

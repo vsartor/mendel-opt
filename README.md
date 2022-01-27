@@ -6,33 +6,33 @@ The algorithm is based on user-defined _"strategies"_ for individual generation,
 
 ## Optimization
 
-The genetic algorithm is accessible through the [`mendel.optimizer.optimize`](https://github.com/vsartor/mendel-opt/blob/master/mendelopt/optimizer.py). This function takes in a fitness function, three strategies and optionally some Genetic Algorithm hyper-parameters.
+The genetic algorithm is accessible through the [`mendel.optimizer.optimize`](https://github.com/vsartor/mendel-opt/blob/master/mendel/optimizer.py). This function takes in a fitness function, three strategies and optionally some Genetic Algorithm hyper-parameters.
 
 ## Fitness Function
 
-The fitness function is the objective function for the optimizer. This function is expected to be of the type `Callable[[np.ndarray], float]`, meaning it takes a NumPy array and returns a floating point value. An alias for this function type is given in [`mendel.common.types.FitnessFunc`](https://github.com/vsartor/mendel-opt/blob/master/mendelopt/common/types.py).
+The fitness function is the objective function for the optimizer. This function is expected to be of the type `Callable[[np.ndarray], float]`, meaning it takes a NumPy array and returns a floating point value. An alias for this function type is given in [`mendel.common.types.FitnessFunc`](https://github.com/vsartor/mendel-opt/blob/master/mendel/common/types.py).
 
 ## Generation Strategy
 
-The algorithm needs to be able to generate new individuals from scratch. The abstract class in [`mendel.generation.GenerationStrategy`](https://github.com/vsartor/mendel-opt/blob/master/mendelopt/generation.py) is given as a template for user-defined strategies.
+The algorithm needs to be able to generate new individuals from scratch. The abstract class in [`mendel.generation.GenerationStrategy`](https://github.com/vsartor/mendel-opt/blob/master/mendel/generation.py) is given as a template for user-defined strategies.
 
-An example of an implementation is [`mendel.generation.BasicGenerationStrategy`](https://github.com/vsartor/mendel-opt/blob/master/mendelopt/generation.py), which takes in a shape and a domain of values in the constructor, and randomly builds NumPy arrays with random choices of these values to generate new individuals.
+An example of an implementation is [`mendel.generation.BasicGenerationStrategy`](https://github.com/vsartor/mendel-opt/blob/master/mendel/generation.py), which takes in a shape and a domain of values in the constructor, and randomly builds NumPy arrays with random choices of these values to generate new individuals.
 
 ## Mutation Strategy
 
-The algorithm needs to be able to mutate existing individuals. The abstract class in [`mendel.mutation.MutationStrategy`](https://github.com/vsartor/mendel-opt/blob/master/mendelopt/mutation.py) is given as a template for user-defined strategies.
+The algorithm needs to be able to mutate existing individuals. The abstract class in [`mendel.mutation.MutationStrategy`](https://github.com/vsartor/mendel-opt/blob/master/mendel/mutation.py) is given as a template for user-defined strategies.
 
-An example of an implementation is [`mendel.mutation.BasicMutationStrategy`](https://github.com/vsartor/mendel-opt/blob/master/mendelopt/mutation.py), which takes a domain of values in the constructor, and randomly alters an entry from the existing individual to another random value from the domain.
+An example of an implementation is [`mendel.mutation.BasicMutationStrategy`](https://github.com/vsartor/mendel-opt/blob/master/mendel/mutation.py), which takes a domain of values in the constructor, and randomly alters an entry from the existing individual to another random value from the domain.
 
 ## Reproduction Strategy
 
-The algorithm needs to be able to create new individuals based on the information from two existing individuals. The abstract class in [`mendel.reproduction.ReproductionStrategy`](https://github.com/vsartor/mendel-opt/blob/master/mendelopt/reproduction.py) is given as a template for user-defined strategies.
+The algorithm needs to be able to create new individuals based on the information from two existing individuals. The abstract class in [`mendel.reproduction.ReproductionStrategy`](https://github.com/vsartor/mendel-opt/blob/master/mendel/reproduction.py) is given as a template for user-defined strategies.
 
-An example of an implementation is [`mendel.reproduction.BasicReproductionStrategy`](https://github.com/vsartor/mendel-opt/blob/master/mendelopt/reproduction.py), which takes no arguments in the constructor, and effectly picks a random index and slices the two parents to create the offspring.
+An example of an implementation is [`mendel.reproduction.BasicReproductionStrategy`](https://github.com/vsartor/mendel-opt/blob/master/mendel/reproduction.py), which takes no arguments in the constructor, and effectly picks a random index and slices the two parents to create the offspring.
 
-## Genetic Parameters
+## Genetic Optimization Parameters
 
-To tune the hyperparameters one may instantiate the named tuple in [`mendel.common.types.GeneticParams`](https://github.com/vsartor/mendel-opt/blob/master/mendelopt/common/types.py).
+To tune the hyperparameters one may instantiate the named tuple in [`mendel.optimization.GeneticParams`](https://github.com/vsartor/mendel-opt/blob/master/mendel/common/types.py).
 
 Particularly relevant parameters are:
 
@@ -41,4 +41,4 @@ Particularly relevant parameters are:
 
 ## Warm starts
 
-The [`mendel.optimizer.optimize`](https://github.com/vsartor/mendel-opt/blob/master/mendelopt/optimizer.py) function also can take a `warm_start` parameter to continue a previous optimization call that already returned. In particular, it expects to receive the `.population` attribute of the return object from the previous [`mendel.optimizer.optimize`](https://github.com/vsartor/mendel-opt/blob/master/mendelopt/optimizer.py) call.
+The [`mendel.optimizer.optimize`](https://github.com/vsartor/mendel-opt/blob/master/mendel/optimizer.py) function also can take a `warm_start` parameter to continue a previous optimization call that already returned. In particular, it expects to receive the `.population` attribute of the return object from the previous [`mendel.optimizer.optimize`](https://github.com/vsartor/mendel-opt/blob/master/mendel/optimizer.py) call.

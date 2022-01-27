@@ -5,7 +5,7 @@ import setuptools
 
 setuptools.setup(
     name="mendel-opt",
-    packages=["mendelopt"],
+    packages=["mendel"],
     version="0.1",
     license="MIT",
     description="Python library written as a case study in implementing pythonic Genetic Algorithms.",

@@ -9,8 +9,8 @@ from typing import List, Set, Tuple
 
 import numpy as np  # type: ignore
 
-from mendelopt.common.types import FitnessFunc, Individual
-from mendelopt.common.utils import censor_string
+from mendel.common.types import FitnessFunc, Individual
+from mendel.common.utils import censor_string
 
 
 class GenerationStrategy(ABC):
@@ -25,7 +25,9 @@ class GenerationStrategy(ABC):
         Function to generate an individual.
         """
 
-    def generate_population(self, count: int, fitness_function: FitnessFunc) -> List[Individual]:
+    def generate_population(
+        self, count: int, fitness_function: FitnessFunc
+    ) -> List[Individual]:
         """
         Function to generate a population of individuals.
         """
